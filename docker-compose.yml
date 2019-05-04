@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+
+  mywebserver:
+    container_name: myhttpd
+    image: myhttpd:0.0.1
+    ports:
+      - "8080:80"
+      - "443:443"
+    restart: always
+    volumes:
+      - /data/httpd:/usr/local/apache2/htdocs
+      - /data/httpd:/home/user/website
+      - /data/httpd/conf:/usr/local/apache2/conf
+      - /data/httpd/conf/extra:/usr/local/apache2/conf/extra

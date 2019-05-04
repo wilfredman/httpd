@@ -1,0 +1,10 @@
+applications:
+- name: MyHttpD
+  instances: 1
+  memory: 1G
+  timeout: 180
+  buildpack: java_buildpack_offline
+  env:
+    spring.profiles.active: cloud
+  routes:
+  - route: myhttpd-dev.apps.cac.preview.pcf.manulife.com
